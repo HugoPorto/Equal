@@ -140,7 +140,8 @@ function createWindow() {
       frame: true
     });
 
-  mainWindow.loadFile("./app/main2.html");
+  mainWindow.loadFile("./app/mainADLTE.html");
+  // mainWindow.loadFile("./app/main2.html");
   mainWindow.webContents.openDevTools()
 
   loginWindow = new BrowserWindow(
