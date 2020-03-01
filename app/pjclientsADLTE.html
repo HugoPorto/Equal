@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="AdminLTE302/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="AdminLTE302/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="AdminLTE302/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="AdminLTE302/plugins/summernote/summernote-bs4.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
     <div class="wrapper" id="main">
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <ul class="navbar-nav">
@@ -617,45 +618,546 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Clientes</h1>
+                            <h1 class="m-0 text-dark">Clientes - Cadastro Pessoa Jurídica</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Equal</a></li>
-                                <li class="breadcrumb-item active">Clientes</li>
+                                <li class="breadcrumb-item active">Clientes/Cadastro/Pessoa Jurídica</li>
                             </ol>
                         </div>
                     </div>
                 </div>
             </div>
             <section class="content">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">Cadastro de Cliente Pesso Jurídica</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" placeholder="CNPJ">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" placeholder="Inscrição Estadual">
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                              <option>Ramo de Atividade</option>
-                                              <option>option 2</option>
-                                              <option>option 3</option>
-                                              <option>option 4</option>
-                                              <option>option 5</option>
-                                            </select>
-                                          </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" placeholder=".col-5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <div class="card card-primary card-tabs">
+                                <div class="card-header p-0 pt-1">
+                                    <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill"
+                                                href="#custom-tabs-one-home" role="tab"
+                                                aria-controls="custom-tabs-one-home" aria-selected="true">Dados
+                                                Cadastrais</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill"
+                                                href="#custom-tabs-one-profile" role="tab"
+                                                aria-controls="custom-tabs-one-profile" aria-selected="false">Dados de
+                                                Cobrança</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill"
+                                                href="#custom-tabs-one-messages" role="tab"
+                                                aria-controls="custom-tabs-one-messages"
+                                                aria-selected="false">Anexos</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-one-settings-tab" data-toggle="pill"
+                                                href="#custom-tabs-one-settings" role="tab"
+                                                aria-controls="custom-tabs-one-settings"
+                                                aria-selected="false">Observações</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content" id="custom-tabs-one-tabContent">
+                                        <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel"
+                                            aria-labelledby="custom-tabs-one-home-tab">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="card card-primary">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Geral</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="CNPJ">
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Inscrição Estadual">
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control">
+                                                                            <option>Ramo de Atividade</option>
+                                                                            <option>option 2</option>
+                                                                            <option>option 3</option>
+                                                                            <option>option 4</option>
+                                                                            <option>option 5</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div
+                                                                        class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                                                        <input type="checkbox"
+                                                                            class="custom-control-input"
+                                                                            id="customSwitch3">
+                                                                        <label class="custom-control-label"
+                                                                            for="customSwitch3">Ativo</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Razão Social">
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Nome Fantasia">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card card-info">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Endereço</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="CEP">
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Endereço">
+                                                                </div>
+                                                                <div class="col-2">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Número">
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Complemento">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Bairro">
+                                                                </div>
+                                                                <div class="col-2">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Código Cidade">
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Cidade">
+                                                                </div>
+                                                                <div class="col-2">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Código UF">
+                                                                </div>
+                                                                <div class="col-1">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="UF">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card card-danger">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Contato</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="DDD">
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Fone">
+                                                                </div>
+                                                                <div class="col-2">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="DDD">
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Celular">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Contato">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control">
+                                                                            <option>Forma de Pagamento</option>
+                                                                            <option>option 2</option>
+                                                                            <option>option 3</option>
+                                                                            <option>option 4</option>
+                                                                            <option>option 5</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="E-mail">
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Site">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card card-success">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Trasnportadora</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control">
+                                                                            <option>Transportadora</option>
+                                                                            <option>option 2</option>
+                                                                            <option>option 3</option>
+                                                                            <option>option 4</option>
+                                                                            <option>option 5</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control">
+                                                                            <option>Região</option>
+                                                                            <option>option 2</option>
+                                                                            <option>option 3</option>
+                                                                            <option>option 4</option>
+                                                                            <option>option 5</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-4">
+                                                                    <div class="form-group">
+                                                                        <select class="form-control">
+                                                                            <option>Vendedor</option>
+                                                                            <option>option 2</option>
+                                                                            <option>option 3</option>
+                                                                            <option>option 4</option>
+                                                                            <option>option 5</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card card-warning">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Contribuinte</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="form-check form-check-inline">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio"
+                                                                            id="customRadio1" name="customRadio">
+                                                                        <label for="customRadio1"
+                                                                            class="custom-control-label">Contribuinte
+                                                                            ICMS</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio"
+                                                                            id="customRadio2" name="customRadio"
+                                                                            checked="">
+                                                                        <label for="customRadio2"
+                                                                            class="custom-control-label">Contribuinte
+                                                                            isento
+                                                                            de
+                                                                            inscrição</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio"
+                                                                            id="customRadio3">
+                                                                        <label for="customRadio3"
+                                                                            class="custom-control-label">Não
+                                                                            contribuinte(Com
+                                                                            ou sem
+                                                                            inscrição)</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="card card-primary">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Crédito</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div
+                                                                            class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                                                            <input type="checkbox"
+                                                                                class="custom-control-input"
+                                                                                id="customSwitch32">
+                                                                            <label class="custom-control-label"
+                                                                                for="customSwitch32">Bloquear
+                                                                                Crédito</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Data Protesto">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Limite de Crédito">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Crédito Disponível">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Crédito Utilizado">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel"
+                                            aria-labelledby="custom-tabs-one-profile-tab">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="card card-primary">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Endereço de Cobrança</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="CEP">
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Endereço">
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Bairro">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Número">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="DDD">
+                                                                </div>
+                                                                <div class="col-2">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Fone">
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Caixa Postal">
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Cidade">
+                                                                </div>
+                                                                <div class="col-2">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="UF">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card card-warning">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Inclusão No Serviço de Proteção ao
+                                                                Crédito</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="form-check form-check-inline">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio"
+                                                                            id="customRadio1" name="customRadio">
+                                                                        <label for="customRadio1"
+                                                                            class="custom-control-label">NÃO</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio"
+                                                                            id="customRadio2" name="customRadio">
+                                                                        <label for="customRadio2"
+                                                                            class="custom-control-label">SERASA</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio"
+                                                                            id="customRadio3">
+                                                                        <label for="customRadio3"
+                                                                            class="custom-control-label">SPC</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio"
+                                                                            id="customRadio4">
+                                                                        <label for="customRadio4"
+                                                                            class="custom-control-label">CARTÓRIO</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio"
+                                                                            id="customRadio5">
+                                                                        <label for="customRadio5"
+                                                                            class="custom-control-label">OUTROS</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card card-success">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Cobranças Realizadas</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <table id="cobranças"
+                                                                        class="table table-bordered table-striped">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Venda</th>
+                                                                                <th>Documento Fiscal</th>
+                                                                                <th>Dia Atrasado</th>
+                                                                                <th>Meio Utilizado</th>
+                                                                                <th>Qtde. Cobrança</th>
+                                                                                <th>Cobrador</th>
+                                                                                <th>Data Cobrança</th>
+                                                                                <th>Observações</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel"
+                                            aria-labelledby="custom-tabs-one-messages-tab">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="card card-success">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Anexos</h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <table id="anexos"
+                                                                        class="table table-bordered table-striped">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>Nome do Arquivo</th>
+                                                                                <th>Anexado Por</th>
+                                                                                <th>Data Anexo</th>
+                                                                                <th>Extensão</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="custom-tabs-one-settings" role="tabpanel"
+                                            aria-labelledby="custom-tabs-one-settings-tab">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="card card-outline card-info">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">
+                                                                Cadastro de Observações                                                                
+                                                            </h3>
+                                                            <!-- tools box -->
+                                                            <div class="card-tools">
+                                                                <button type="button" class="btn btn-tool btn-sm"
+                                                                    data-card-widget="collapse" data-toggle="tooltip"
+                                                                    title="Collapse">
+                                                                    <i class="fas fa-minus"></i></button>
+                                                                <button type="button" class="btn btn-tool btn-sm"
+                                                                    data-card-widget="remove" data-toggle="tooltip"
+                                                                    title="Remove">
+                                                                    <i class="fas fa-times"></i></button>
+                                                            </div>
+                                                            <!-- /. tools -->
+                                                        </div>
+                                                        <!-- /.card-header -->
+                                                        <div class="card-body pad">
+                                                            <div class="mb-3">
+                                                                <textarea class="textarea"
+                                                                    placeholder="Place some text here"
+                                                                    style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -687,11 +1189,18 @@
     <script src="AdminLTE302/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
     <script>
         $(function () {
-            $("#example1").DataTable();
-            $('#example2').DataTable({
+            $("#cobranças").DataTable({
                 "paging": true,
-                "lengthChange": false,
-                "searching": false,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+            });
+            $('#anexos').DataTable({
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
                 "ordering": true,
                 "info": true,
                 "autoWidth": false,
@@ -700,6 +1209,12 @@
     </script>
     <script src="vue/vue.min.js"></script>
     <script src="scripts/screens/clients/clients.js"></script>
+    <script src="AdminLTE302/plugins/summernote/summernote-bs4.min.js"></script>
+    <script>
+        $(function () {
+            $('.textarea').summernote()
+        })
+    </script>
 </body>
 
 </html>
