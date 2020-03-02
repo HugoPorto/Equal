@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equal | Community 2</title>
+  <% if (htmlWebpackPlugin.options.nodeModules) { %>
+  <script>
+    require('module').globalPaths.push(
+      `<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>`
+    )
+  </script>
+  <% } %>
+  <link rel="stylesheet" href="static/AdminLTE302/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="static/AdminLTE302/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="static/AdminLTE302/dist/css/adminlte.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
+  <div id="app"></div>
+  <!-- Set `__static` path to static files in production -->
+  <script>
+    if (process.env.NODE_ENV !== 'development')
+      window.__static = require('path')
+        .join(__dirname, '/static')
+        .replace(/\\/g, '\\\\')
+  </script>
+  <!-- webpack builds are automatically injected -->
+  <script src="static/AdminLTE302/plugins/jquery/jquery.min.js"></script>
+  <script src="static/AdminLTE302/plugins/jquery/jquery.min.js"></script>
+  <script src="static/AdminLTE302/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/AdminLTE302/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="static/AdminLTE302/dist/js/adminlte.js"></script>
+  <script src="static/AdminLTE302/dist/js/demo.js"></script>
+  <script src="static/AdminLTE302/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="static/AdminLTE302/plugins/raphael/raphael.min.js"></script>
+  <script src="static/AdminLTE302/plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="static/AdminLTE302/plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <script src="static/AdminLTE302/plugins/chart.js/Chart.min.js"></script>
+  <link rel="stylesheet" href="static/AdminLTE302/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <!-- PAGE SCRIPTS -->
+  <!-- <script src="AdminLTE302/dist/js/pages/dashboard2.js"></script> -->
+  <script src="static/AdminLTE302/plugins/datatables/jquery.dataTables.js"></script>
+  <script src="static/AdminLTE302/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+  <script>
+    $(function () {
+      $("#clientes").DataTable({
+        "language": {
+          "url": "datatables/json/Portuguese-Brasil.json"
+        },
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+      });
+    });
+  </script>
+</body>
+
+</html>
