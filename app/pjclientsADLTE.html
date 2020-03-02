@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="AdminLTE302/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="AdminLTE302/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="AdminLTE302/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="AdminLTE302/dist/css/style.css">
     <link rel="stylesheet" href="AdminLTE302/plugins/summernote/summernote-bs4.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -623,7 +624,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Equal</a></li>
-                                <li class="breadcrumb-item active">Clientes/Cadastro/Pessoa Jurídica</li>
+                                <li class="breadcrumb-item active">Clientes / Cadastro / Pessoa Jurídica</li>
                             </ol>
                         </div>
                     </div>
@@ -676,7 +677,7 @@
                                                             <div class="row">
                                                                 <div class="col-3">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="CNPJ">
+                                                                        placeholder="CNPJ" id="mandatory">
                                                                 </div>
                                                                 <div class="col-3">
                                                                     <input type="text" class="form-control"
@@ -707,7 +708,7 @@
                                                             <div class="row">
                                                                 <div class="col-6">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="Razão Social">
+                                                                        placeholder="Razão Social" id="mandatory">
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <input type="text" class="form-control"
@@ -724,15 +725,15 @@
                                                             <div class="row">
                                                                 <div class="col-2">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="CEP">
+                                                                        placeholder="CEP" id="mandatory">
                                                                 </div>
                                                                 <div class="col-4">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="Endereço">
+                                                                        placeholder="Endereço" id="mandatory">
                                                                 </div>
                                                                 <div class="col-2">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="Número">
+                                                                        placeholder="Número" id="mandatory">
                                                                 </div>
                                                                 <div class="col-4">
                                                                     <div class="form-group">
@@ -748,19 +749,19 @@
                                                                 </div>
                                                                 <div class="col-2">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="Código Cidade">
+                                                                        placeholder="Código Cidade" id="mandatory">
                                                                 </div>
                                                                 <div class="col-4">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="Cidade">
+                                                                        placeholder="Cidade" id="mandatory">
                                                                 </div>
                                                                 <div class="col-2">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="Código UF">
+                                                                        placeholder="Código UF" id="mandatory">
                                                                 </div>
                                                                 <div class="col-1">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="UF">
+                                                                        placeholder="UF" id="mandatory">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -781,12 +782,12 @@
                                                                 </div>
                                                                 <div class="col-2">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="DDD">
+                                                                        placeholder="DDD" id="mandatory">
                                                                 </div>
                                                                 <div class="col-4">
                                                                     <div class="form-group">
                                                                         <input type="text" class="form-control"
-                                                                            placeholder="Celular">
+                                                                            placeholder="Celular" id="mandatory">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1020,7 +1021,8 @@
                                                                 <div class="form-check form-check-inline">
                                                                     <div class="custom-control custom-radio">
                                                                         <input class="custom-control-input" type="radio"
-                                                                            id="customRadio1" name="customRadio">
+                                                                            id="customRadio1" name="customRadio"
+                                                                            checked>
                                                                         <label for="customRadio1"
                                                                             class="custom-control-label">NÃO</label>
                                                                     </div>
@@ -1130,7 +1132,7 @@
                                                     <div class="card card-outline card-info">
                                                         <div class="card-header">
                                                             <h3 class="card-title">
-                                                                Cadastro de Observações                                                                
+                                                                Cadastro de Observações
                                                             </h3>
                                                             <!-- tools box -->
                                                             <div class="card-tools">
@@ -1152,7 +1154,7 @@
                                                                     placeholder="Place some text here"
                                                                     style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1190,6 +1192,9 @@
     <script>
         $(function () {
             $("#cobranças").DataTable({
+                "language": {
+                    "url": "datatables/json/Portuguese-Brasil.json"
+                },
                 "paging": true,
                 "lengthChange": true,
                 "searching": true,
@@ -1198,6 +1203,9 @@
                 "autoWidth": false,
             });
             $('#anexos').DataTable({
+                "language": {
+                    "url": "datatables/json/Portuguese-Brasil.json"
+                },
                 "paging": true,
                 "lengthChange": true,
                 "searching": true,

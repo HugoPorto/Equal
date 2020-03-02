@@ -617,12 +617,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Clientes</h1>
+                            <h1 class="m-0 text-dark">Clientes - Lista</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Equal</a></li>
-                                <li class="breadcrumb-item active">Clientes</li>
+                                <li class="breadcrumb-item active">Clientes / Lista</li>
                             </ol>
                         </div>
                     </div>
@@ -637,7 +637,7 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example1" class="table table-bordered table-striped">
+                                <table id="clientes" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th>Nome</th>
@@ -724,11 +724,24 @@
     <script src="AdminLTE302/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
     <script>
         $(function () {
-            $("#example1").DataTable();
-            $('#example2').DataTable({
+            $("#clientes").DataTable({
+                "language": {
+                    "url": "datatables/json/Portuguese-Brasil.json"
+                },
                 "paging": true,
-                "lengthChange": false,
-                "searching": false,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+            });
+            $('#example2').DataTable({
+                "language": {
+                    "url": "datatables/json/Portuguese-Brasil.json"
+                },
+                "paging": true,
+                "lengthChange": true,
+                "searching": true,
                 "ordering": true,
                 "info": true,
                 "autoWidth": false,
