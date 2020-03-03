@@ -8,8 +8,15 @@ let loki = require("lokijs"),
   db = new loki(path.join(__dirname, "./loki/loki.json")),
   read = require('read-file-utf8'),
   data = read(path.join(__dirname, "./app/loki/loki.json"));
-
 db.loadJSON(data);
+
+function loadRouterConfig() {
+  let loki = require("lokijs"),
+    db = new loki(path.join(__dirname, "./router/router.json")),
+    read = require('read-file-utf8'),
+    data = read(path.join(__dirname, "./app/router/router.json"));
+  db.loadJSON(data);
+}
 
 function loadVariables() {
   let mainWindow,
@@ -141,7 +148,6 @@ function createWindow() {
     });
 
   mainWindow.loadFile("./app/mainADLTE.html");
-  // mainWindow.loadFile("./app/main2.html");
   mainWindow.webContents.openDevTools()
 
   loginWindow = new BrowserWindow(
