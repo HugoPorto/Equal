@@ -5,18 +5,20 @@ const path = require("path"),
   MenuItem = Menu.MenuItem;
 
 let loki = require("lokijs"),
-  db = new loki(path.join(__dirname, "./loki/loki.json")),
-  read = require('read-file-utf8'),
-  data = read(path.join(__dirname, "./app/loki/loki.json"));
-db.loadJSON(data);
 
-function loadRouterConfig() {
-  let loki = require("lokijs"),
-    db = new loki(path.join(__dirname, "./router/router.json")),
-    read = require('read-file-utf8'),
-    data = read(path.join(__dirname, "./app/router/router.json"));
-  db.loadJSON(data);
-}
+// function loadDBLokiPattern() {
+//   let db = new loki(path.join(__dirname, "./loki/loki.json"));
+//   let read = require('read-file-utf8');
+//   let data = read(path.join(__dirname, "./app/loki/loki.json"));
+//   db.loadJSON(data);
+// }
+
+// function loadRouterConfig() {
+//   let db = new loki(path.join(__dirname, "./router/router.json"));
+//   let read = require('read-file-utf8');
+//   let data = read(path.join(__dirname, "./app/router/router.json"));
+//   db.loadJSON(data);
+// }
 
 function loadVariables() {
   let mainWindow,
@@ -185,7 +187,98 @@ function createWindow() {
 function onMain() {
   app.on("ready", function () {
     createWindow();
-    Menu.setApplicationMenu(null);
+
+    const template = [
+      {
+        label: 'File',
+        submenu: [
+          {
+            label: 'Menu',
+            click: function () {
+              mainWindow.loadFile('./app/main2.html')
+            },
+            accelerator: 'F2'
+          },
+          {
+            label: 'Configurações',
+            click: function () {
+              mainWindow.loadFile('./app/settings.html')
+            },
+          }
+        ]
+      },
+      // {
+      //   label: 'Cadastros',
+      //   submenu: [
+      //     {
+      //       label: 'Clientes',
+      //       click: function () {
+      //         mainWindow.loadFile('./app/index.html')
+      //       }
+      //     },
+      //     {
+      //       label: 'Fornecedores',
+      //       click: function () {
+      //         mainWindow.loadFile('./app/fornecedores.html')
+      //       }
+      //     },
+      //     {
+      //       label: 'Vendedores',
+      //       click: function () {
+      //         mainWindow.loadFile('./app/produtos.html')
+      //       },
+      //       accelerator: 'F4'
+      //     },
+      //     {
+      //       label: 'Transportadora',
+      //       click: function () {
+      //         mainWindow.loadFile('./app/fabricantes.html')
+      //       }
+      //     },
+      //     {
+      //       label: 'Vendas',
+      //       click: function () {
+      //         mainWindow.loadFile('./app/vendas.html')
+      //       }
+      //     },
+      //     {
+      //       label: 'Diversos',
+      //       click: function () {
+      //         mainWindow.loadFile('./app/empresas2.html')
+      //       }
+      //     },
+      //     {
+      //       label: 'Bancos',
+      //       click: function () {
+      //         mainWindow.loadFile('./app/empresas2.html')
+      //       }
+      //     },
+      //   ]
+      // },
+      {
+        role: 'window',
+        label: 'Janela',
+        submenu: [
+          {
+            label: 'Minimizar',
+            role: 'minimize'
+          },
+          {
+            label: 'Fechar',
+            role: 'close'
+          }
+        ]
+      },
+      {
+        label: 'Ajuda',
+        click: function () {
+          electron.shell.openExternal('http://focuxmicrosystems.co')
+        }
+      }
+    ];
+
+    const menu = Menu.buildFromTemplate(template);
+    Menu.setApplicationMenu(menu);
 
     globalShortcut.register('F1', () => {
       mainWindow.loadFile("./app/pdv.html");
@@ -204,7 +297,7 @@ function onMain() {
 
   app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
-      app.quit();
+      app.quit()
     }
   });
 
@@ -229,6 +322,8 @@ function onMain() {
   });
 }
 
+loadDBLokiPattern();
+loadVariables();
 ofTheSales();
 ofTheFiscal();
 loadVariables();

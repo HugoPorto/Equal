@@ -10,7 +10,7 @@ let rootus = db.getCollection('rootus'), usuarios = db.getCollection('usuarios')
 Vue.component('login', {
     template: `
     <div class="form-signin">
-        <img class="mb-4" src="images/logoLogin.png" alt="" style="width:250px">
+        <img class="mb-4" src="AdminLTE302/dist/img/logo_login.png" alt="" style="width:250px">
         <br>
         <br>
         <input v-on:keyup.13="toPassword" type="text" id="inputEmail" class="form-control" placeholder="Usuário" autofocus v-model="user">
