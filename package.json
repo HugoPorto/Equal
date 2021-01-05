@@ -20,7 +20,7 @@
     "electron-wix-msi": "^2.2.0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "electron": "^4.0.4",
     "electron-osx-prompt": "^1.4.1",
     "electron-pdf-window": "^1.0.12",
