@@ -34,7 +34,7 @@
     "mousetrap": "^1.6.3",
     "mysql": "^2.16.0",
     "node-fetch": "^2.3.0",
-    "node-forge": "^0.9.1",
+    "node-forge": "^1.0.0",
     "pdf-to-printer": "0.0.2",
     "phantomjs": "^2.1.7",
     "printer": "^0.2.2",
