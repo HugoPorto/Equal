@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "electron": "^4.0.4",
+    "electron": "^13.6.6",
     "electron-osx-prompt": "^1.4.1",
     "electron-pdf-window": "^1.0.12",
     "electron-prompt": "^1.4.0",
